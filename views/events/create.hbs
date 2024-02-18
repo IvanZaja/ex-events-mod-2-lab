@@ -1,0 +1,43 @@
+<form action="/create" method="post">
+    <div class="mb-3">
+        <label class="form-label">Event title</label>
+        <input type="text" name="title" value="{{event.title}}" class="form-control {{#if errors.title }}is-invalid{{/if}}"  placeholder="Example input placeholder"/>
+        {{#if errors.title }}<div class="invalid-feedback">{{ errors.title }}</div>{{/if}}
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Event description</label>
+        <textarea class="form-control {{#if errors.description }}is-invalid{{/if}}" name="description" value="{{event.description}}"  rows="3"></textarea>
+        {{#if errors.description }}<div class="invalid-feedback">{{ errors.description }}</div>{{/if}}
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Image url</label>
+        <input type="text" class="form-control"  name="image" value="{{event.image}}"  placeholder="Example input placeholder">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Capacity</label>
+        <input type="number" class="form-control" name="capacity" value="{{event.capacity}}"  placeholder="Example input placeholder">
+    </div>
+    <div>
+        <label class="form-label">Tags</label>
+        <select class="form-select" name="tags" value="{{event.tags}}" aria-label="Default select example">
+        <option selected>Open this select menu</option>
+        <option value="1">Online Events</option>
+        <option value="2">Online Festivals</option>
+        <option value="3">#beers</option>
+    </select>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Start date</label>
+        <input type="date" class="form-control {{#if errors.start }}is-invalid{{/if}}" name="start" value="{{event.start}}"  placeholder="Example input placeholder">
+        {{#if errors.start }}<div class="invalid-feedback">{{ errors.start }}</div>{{/if}}
+    </div>
+    <div class="mb-3">
+        <label class="form-label">End date</label>
+        <input type="date" class="form-control {{#if errors.end }}is-invalid{{/if}}" name="end" value="{{event.end}}"  placeholder="Example input placeholder">
+        {{#if errors.end }}<div class="invalid-feedback">{{ errors.end }}</div>{{/if}}
+    </div>
+
+    <button type="submit" class="btn btn-outline-primary">Done</button>
+
+</form>
+
